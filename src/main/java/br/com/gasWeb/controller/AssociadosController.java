@@ -52,4 +52,9 @@ public class AssociadosController {
 	public Optional<Grupos> findGrupoById(@PathVariable(value = "id") long id) {
 		return associadosService.findGrupoById(id);
 	}
+	
+	@GetMapping(value = "/dependente/{id}")
+	public List<Associados> findAssociadoByAssociadoPrincipal(@PathVariable(value = "id") long id) {
+		return associadosService.getAssociadoDependente(id);
+	}
 }

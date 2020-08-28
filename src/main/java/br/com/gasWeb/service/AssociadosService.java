@@ -48,4 +48,8 @@ public class AssociadosService{
 	public Optional<Grupos> findGrupoById(Long id) {
 		return gruposRepo.findById(id);
 	}
+	
+	public List<Associados> getAssociadoDependente(Long id) {
+		return associadoRepo.findAssociadoByAssociadoPrincipal(id);
+	}
 }
