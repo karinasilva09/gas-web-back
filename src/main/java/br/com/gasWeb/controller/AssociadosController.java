@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.gasWeb.entity.Associados;
+import br.com.gasWeb.entity.Grupos;
 import br.com.gasWeb.entity.Situacoes;
 import br.com.gasWeb.service.AssociadosService;
 
@@ -40,5 +41,15 @@ public class AssociadosController {
 	@GetMapping(value = "/situacao/{id}")
 	public Optional<Situacoes> findSituacaoById(@PathVariable(value = "id") long id) {
 		return associadosService.findSituacoesById(id);
+	}
+	
+	@GetMapping(value = "/grupos")
+	public List<Grupos> findAllGrupos() {
+		return associadosService.findAllGrupos();
+	}
+	
+	@GetMapping(value = "/grupo/{id}")
+	public Optional<Grupos> findGrupoById(@PathVariable(value = "id") long id) {
+		return associadosService.findGrupoById(id);
 	}
 }
