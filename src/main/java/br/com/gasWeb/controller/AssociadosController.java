@@ -36,4 +36,9 @@ public class AssociadosController {
 	public List<Situacoes> findAllSituacoes() {
 		return associadosService.findAllSituacoes();
 	}
+	
+	@GetMapping(value = "/situacao/{id}")
+	public Optional<Situacoes> findSituacaoById(@PathVariable(value = "id") long id) {
+		return associadosService.findSituacoesById(id);
+	}
 }

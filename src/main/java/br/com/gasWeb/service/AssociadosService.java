@@ -31,4 +31,8 @@ public class AssociadosService{
 	public List<Situacoes> findAllSituacoes() {
 		return situacoesRepo.findAll();
 	}
+	
+	public Optional<Situacoes> findSituacoesById(Long id) {
+		return situacoesRepo.findById(id);
+	}
 }
